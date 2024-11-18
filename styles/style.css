@@ -22,7 +22,7 @@
   align-items: center;
   padding-block-start: 102px;
   font-family: var(--main-font, sans-serif);
-  font-variation-settings: "weight" var(--normal-weight, 400);
+  font-variation-settings: "wght" var(--normal-wght, 400);
   line-height: normal;
   color: var(--accent-color, #000);
   background-color: var(--bg-color, #fff);
@@ -137,7 +137,7 @@
 .card__title {
   padding: 3px 10px;
   font-size: inherit;
-  font-variation-settings: "weight" var(--bold-weight, 700);
+  font-variation-settings: "wght" var(--bold-wght, 700);
   line-height: normal;
 }
 
@@ -160,7 +160,7 @@
 }
 
 .paragraph {
-  font-variation-settings: "weight" var(--normal-weight, 400);
+  font-variation-settings: "wght" var(--normal-wght, 400);
   line-height: 116.667%;
 }
 
@@ -240,7 +240,7 @@
 .button__text {
   position: relative;
   z-index: 1;
-  font-family: var(--accent-font, fantasy);
+  font-family: var(--accent-font, Arial);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;

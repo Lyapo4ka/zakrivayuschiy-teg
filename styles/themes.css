@@ -9,8 +9,8 @@
     --bg-image: url(../svg/pattern-light.svg);
     --bg-color: #FFFFFF;
     --accent-color: #000;
-    --normal-weight: 400;
-    --bold-weight: 700;
+    --normal-wght: 400;
+    --bold-wght: 700;
     --heart-contour: #000;
 }
 
@@ -18,8 +18,8 @@
     --bg-image: url(../svg/pattern-dark.svg);
     --bg-color: #000;
     --accent-color: #00CC14;
-    --normal-weight: 465;
-    --bold-weight: 785;
+    --normal-wght: 465;
+    --bold-wght: 785;
     --heart-contour: #00CC14;
 }
 
@@ -28,8 +28,8 @@
         --bg-image: url(../svg/pattern-dark.svg);
         --bg-color: #000;
         --accent-color: #00CC14;
-        --normal-weight: 465;
-        --bold-weight: 785;
+        --normal-wght: 465;
+        --bold-wght: 785;
         --heart-contour: #00CC14;
     }
 }
