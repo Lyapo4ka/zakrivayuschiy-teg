@@ -85,25 +85,25 @@
 
 .theme-menu__button:focus {
   outline: none;
-  opacity: 0.6;
 }
 
 .theme-menu__button::after {
-  content: "";
-  position: absolute;
-  inset-inline-start: 0;
-  inset-block-end: -5px;
-  inline-size: 100%;
-  block-size: 2px;
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  margin-top: 2px;
   background-color: var(--accent-color);
+  transition: width 300ms, background-color 1s;
+}
+
+.theme-menu__button:focus-visible {
   opacity: 0.6;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
 }
 
 .theme-menu__button:focus-visible::after {
   transform: scaleX(1);
+  width: 100%;
 }
 
 .theme-menu__button:disabled {
@@ -146,6 +146,7 @@
   object-position: center;
   inline-size: 100%;
   aspect-ratio: 1/1;
+  block-size: 100%;
   border: 2px solid var(--accent-color, #000);
 }
 
@@ -160,7 +161,6 @@
 }
 
 .paragraph {
-  font-variation-settings: "wght" var(--normal-wght, 400);
   line-height: 116.667%;
 }
 
@@ -172,11 +172,15 @@
 }
 
 .card__icon-button {
-  block-size: 34px;
+  padding: 0;
+  height: 38px;
   outline: 2px solid transparent;
   transition: outline 0.3s ease;
   border: none;
   background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card__icon-button:focus {
@@ -221,15 +225,15 @@
 }
 
 .button:focus-visible {
-  box-shadow: 5px 5px 0 0 currentColor;
+  box-shadow: 2px 2px 0 0 currentColor;
 }
 
 .button:focus {
-  box-shadow: 5px 5px 0 0 currentColor;
+  box-shadow: 2px 2px 0 0 currentColor;
 }
 
 .button:focus-within {
-  box-shadow: 5px 5px 0 0 currentColor;
+  box-shadow: 2px 2px 0 0 currentColor;
 }
 
 .card__like-button {
