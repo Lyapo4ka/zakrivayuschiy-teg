@@ -293,10 +293,6 @@
   color: var(--bg-color);
 }
 
-.button:focus-visible {
-  box-shadow: 2px 2px 0 0 currentColor;
-}
-
 .button:focus {
   box-shadow: 5px 5px 0 0 currentColor;
 }
