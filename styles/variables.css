@@ -2,7 +2,7 @@
 :root {
     --max-width: 700px;
     --main-font: 'Inter', sans-serif;
-    --accent-font: 'Press Start 2P', Arial;
+    --accent-font: 'Press Start 2P', fantasy;
     --normal-wght: 400;
     --bold-wght: 700;
     --bg-color: #FFF;
@@ -13,4 +13,5 @@
     --heart-contour: #000;
     --heart-fill: #FF0000;
     --label-shadow: #FFF;
+    --button-text-color: #fff;
 }

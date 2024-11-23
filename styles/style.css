@@ -21,7 +21,7 @@
   flex-direction: column;
   align-items: center;
   padding-block-start: 102px;
-  font-family: var(--main-font, sans-serif);
+  font-family: var(--main-font, monospace, sans-serif);
   font-variation-settings: "wght" var(--normal-wght, 400);
   line-height: normal;
   color: var(--accent-color, #000);
@@ -37,9 +37,9 @@
   flex-direction: column;
   align-items: center;
   inline-size: clamp(320px, 100%, var(--max-width, 700px));
-  margin-block-end: 100px;
+  margin-block-end: 98px;
   padding: clamp(120px, 32dvi, 136px) 0 25px;
-  font-family: var(--accent-font, Arial);
+  font-family: var(--accent-font), fantasy, serif;
   font-weight: 400;
   border: 2px solid var(--accent-color);
   background-color: var(--bg-color);
@@ -59,14 +59,14 @@
 }
 
 .theme-menu {
-  padding-block-start: 25px;
+  padding-block-start: 23px;
   padding-inline-start: 20px;
 }
 
 .theme-menu__list {
   display: flex;
   flex-direction: column;
-  gap: 0.6em;
+  gap: 0.4em;
 }
 
 .theme-menu__button {
@@ -94,7 +94,6 @@
   height: 2px;
   margin-top: 2px;
   background-color: var(--accent-color);
-  transition: width 300ms, background-color 1s;
 }
 
 .theme-menu__button:focus-visible {
@@ -145,43 +144,44 @@
   font-size: inherit;
   font-variation-settings: "wght" var(--bold-wght, 700);
   line-height: normal;
+  font-family: var(--main-font), monospace, sans-serif;
 }
 
-.filter_1 {
+.filter_brightness {
   filter: brightness(130%);
 }
 
-.filter_2 {
+.filter_saturate {
   filter:saturate(0.2)
 }
 
-.filter_3 {
+.filter_hue-rotate-minus {
   filter: hue-rotate(-2deg) saturate(4) brightness(1) contrast(1.2);
 }
 
-.filter_4 {
+.filter_hue-rotate-plus {
   filter: hue-rotate(20deg) brightness(1.2) saturate(1);
 }
 
-.filter_5 {
+.filter_pets {
   filter: invert(1) brightness(0.8);
 }
 
-.filter_6 {
+.filter_sepia {
   filter: sepia(0.8) saturate(.5);
 }
 
-.filter_7 {
+.filter_blur {
   filter: blur(15px);
 }
 
-.filter_8 {
+.filter_many {
   filter: hue-rotate(95deg) contrast(0.4) saturate(2) blur(1.5px);
 }
 
 
 .img__label {
-  font-family: var(--accent-font, fantasy, sans-serif);
+  font-family: var(--accent-font), fantasy, serif;
   font-size: 14px;
   text-transform: uppercase;
   position: absolute;
@@ -221,7 +221,7 @@
 .card__description {
   display: flex;
   flex-direction: column;
-  gap: 27px;
+  gap: 28px;
 }
 
 .paragraph {
@@ -256,16 +256,22 @@
 }
 
 .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   outline: 2px solid var(--accent-color);
   transition: box-shadow 0.3s ease;
-  border: transparent;
-  background: var(--bg-color);
-  color: var(--accent-color);
+  border: none;
+  background-color: var(--button-background);
+  font-family: var(--accent-font), fantasy, sans-serif;
+  cursor: pointer;
+  overflow: hidden;
 }
 
 .button:focus-visible {
-  box-shadow: 5px 5px 0 var(--accent-color);
+  box-shadow: 2px 2px 0 var(--accent-color);
+  outline: 2px solid var(--accent-color);
 }
 
 .button::before {
@@ -279,42 +285,37 @@
   scale: 0 1;
   transform-origin: left;
   transition: scale 0.5s ease-in-out;
+  display: block;
 }
 
 .button:hover::before {
   scale: 1;
-}
-
-.button:hover .button__text {
-  color: var(--bg-color);
-}
-
-.button:hover .footer__icon {
-  color: var(--bg-color);
+  cursor: pointer;
 }
 
 .button:focus {
-  box-shadow: 5px 5px 0 0 currentColor;
+  border: none;
 }
 
 .button:focus-within {
-  box-shadow: 2px 2px 0 0 currentColor;
+  box-shadow: 5px 5px 0 0 currentColor;
 }
 
 .card__like-button {
-  min-inline-size: 126px;
+  min-inline-size: 127px;
   min-block-size: 34px;
 }
 
 .button__text {
   position: relative;
   z-index: 1;
-  font-family: var(--accent-font, Arial);
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 90%;
   transition: color 1s ease;
+  color: var(--button-text-color);
+  mix-blend-mode: difference;
 }
 
 .footer__save-button {
@@ -323,16 +324,17 @@
   align-items: center;
   gap: 8px;
   flex-wrap: wrap;
-  padding: 15px;
+  padding: 11px;
   min-inline-size: 306px;
   inline-size: min(80dvi, 335px);
   background-color: var(--bg-color);
+  color: var(--accent-color);
 }
 
 .footer__save-button:focus,
 .footer__save-button:focus-within,
 .footer__save-button:focus-visible {
-  outline: 0 solid currentColor;
+  outline: 2px solid currentColor;
   outline-offset: 0;
 }
 
@@ -341,7 +343,8 @@
   z-index: 1;
   inline-size: 21px;
   aspect-ratio: 1/1;
-  transition: color 1s ease;
+  mix-blend-mode: difference;
+  color: var(--button-text-color);
 }
 
 .modal {
@@ -354,7 +357,6 @@
   font-weight: 400;
   line-height: 150%;
   text-transform: uppercase;
-
   background-color: var(--bg-color);
   border: 2px solid var(--accent-color);
 }
@@ -390,7 +392,20 @@
   padding: 9px;
 }
 
+.modal__button:before {
+  box-shadow: none;
+}
+
 @media (width <=375px) {
+
+  .card__description {
+    gap: 32px !important;
+  }
+
+  .main {
+    gap: 53px;
+  }
+
   .footer__icon {
     inline-size: 28px;
     block-size: 28px;

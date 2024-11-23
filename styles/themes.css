@@ -14,6 +14,7 @@
     --normal-wght: 400;
     --bold-wght: 700;
     --heart-contour: #000;
+    --button-background: #FFF;
 }
 
 .page.theme-dark {
@@ -25,6 +26,8 @@
     --normal-wght: 465;
     --bold-wght: 785;
     --heart-contour: #00CC14;
+    --button-background: #000;
+    --button-text-color: #00CC14;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,5 +40,7 @@
         --normal-wght: 465;
         --bold-wght: 785;
         --heart-contour: #00CC14;
+        --button-background: #000;
+        --button-text-color: #00CC14;
     }
 }
